@@ -27,6 +27,11 @@ const GlobalStyle = createGlobalStyle`
     font-family: Georgia, Times, 'Times New Roman', serif;
     line-height: 1.5em;
   }
+
+  .user-avatar {
+    height: 100%;
+    border-radius: 50%;
+  }
 `;
 
 export default GlobalStyle;
