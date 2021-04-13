@@ -15,6 +15,9 @@ import {
   LOAD_USERS,
   LOAD_USERS_SUCCESS,
   LOAD_USERS_ERROR,
+  LOAD_DETAIL_USER,
+  LOAD_DETAIL_USER_SUCCESS,
+  LOAD_DETAIL_USER_ERROR,
 } from './constants';
 
 // The initial state of the App
@@ -26,6 +29,7 @@ export const initialState = {
     repositories: false,
   },
   users: false,
+  detailUserData: false,
 };
 
 /* eslint-disable default-case, no-param-reassign */
@@ -61,6 +65,21 @@ const appReducer = (state = initialState, action) =>
         break;
 
       case LOAD_USERS_ERROR:
+        draft.error = action.error;
+        draft.loading = false;
+        break;
+
+      case LOAD_DETAIL_USER:
+        draft.loading = true;
+        draft.error = false;
+        break;
+
+      case LOAD_DETAIL_USER_SUCCESS:
+        draft.detailUserData = action.user;
+        draft.loading = false;
+        break;
+
+      case LOAD_DETAIL_USER_ERROR:
         draft.error = action.error;
         draft.loading = false;
         break;

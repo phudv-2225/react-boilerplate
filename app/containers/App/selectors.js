@@ -39,6 +39,18 @@ const makeSelectUsers = () =>
     globalState => globalState.users,
   );
 
+const makeSelectDetailUserData = () =>
+  createSelector(
+    selectGlobal,
+    globalState => globalState.detailUserData,
+  );
+
+const makeSelectDetailUser = userId =>
+  createSelector(
+    selectGlobal,
+    globalState => globalState.users.find(user => user.id === userId),
+  );
+
 const makeSelectLocation = () =>
   createSelector(
     selectRouter,
@@ -52,5 +64,7 @@ export {
   makeSelectError,
   makeSelectRepos,
   makeSelectUsers,
+  makeSelectDetailUser,
+  makeSelectDetailUserData,
   makeSelectLocation,
 };

@@ -11,6 +11,7 @@ import { Helmet } from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
+import { Link } from 'react-router-dom';
 
 import { useInjectSaga } from 'utils/injectSaga';
 import { useInjectReducer } from 'utils/injectReducer';
@@ -62,7 +63,7 @@ export function ListUsersPage({ loading, error, users, onLoadUsers }) {
   if (users) {
     renderedUsers = users.map(user => (
       <ListItem key={user.id}>
-        <A>
+        <Link to={`/user/${user.id}/view`}>
           <UserInfo>
             <UserAvatar>
               <Img
@@ -73,7 +74,7 @@ export function ListUsersPage({ loading, error, users, onLoadUsers }) {
             </UserAvatar>
             <ListItemTitle> {user.login} </ListItemTitle>
           </UserInfo>
-        </A>
+        </Link>
 
         <A href={user.html_url}>
           <ListItemLabel>Git</ListItemLabel>

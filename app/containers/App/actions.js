@@ -22,6 +22,9 @@ import {
   LOAD_USERS,
   LOAD_USERS_SUCCESS,
   LOAD_USERS_ERROR,
+  LOAD_DETAIL_USER,
+  LOAD_DETAIL_USER_SUCCESS,
+  LOAD_DETAIL_USER_ERROR,
 } from './constants';
 
 /**
@@ -90,6 +93,36 @@ export function usersLoaded(users) {
 export function loadingUsersError(error) {
   return {
     type: LOAD_USERS_ERROR,
+    error,
+  };
+}
+
+/**
+ * Load the detail, this action starts the request saga
+ */
+export function loadDetailUser(userId) {
+  return {
+    type: LOAD_DETAIL_USER,
+    userId,
+  };
+}
+
+/**
+ * Dispatched when the detail are loaded by the request saga
+ */
+export function loadDetailUserSuccess(user) {
+  return {
+    type: LOAD_DETAIL_USER_SUCCESS,
+    user,
+  };
+}
+
+/**
+ * Dispatched when loading the detail fails
+ */
+export function loadDetailUserError(error) {
+  return {
+    type: LOAD_DETAIL_USER_ERROR,
     error,
   };
 }

@@ -16,3 +16,9 @@ export const LOAD_REPOS_ERROR = 'boilerplate/App/LOAD_REPOS_ERROR';
 export const LOAD_USERS = 'boilerplate/App/LOAD_USERS';
 export const LOAD_USERS_SUCCESS = 'boilerplate/App/LOAD_USERS_SUCCESS';
 export const LOAD_USERS_ERROR = 'boilerplate/App/LOAD_USERS_ERROR';
+
+export const LOAD_DETAIL_USER = 'app/DetailUserPage/LOAD_DETAIL_USER';
+export const LOAD_DETAIL_USER_SUCCESS =
+  'app/DetailUserPage/LOAD_DETAIL_USER_SUCCESS';
+export const LOAD_DETAIL_USER_ERROR =
+  'app/DetailUserPage/LOAD_DETAIL_USER_ERROR';
